@@ -50,3 +50,35 @@ short numeroCurto = 1;
 int numeroNormal = numeroCurto;
 short numeroCurto2 = numeroNormal;
 ```
+
+## Variaveis e Constantes
+
+Uma **variável** pe uma área de memória, associada a um nome, que pode armazenar valores de um determinado tipo. Um tipo de dado define um conjunto de valores e um conjunto de operações. **Java** é uma linguagem com rigidez de tipos, diferente de linguagens como JavaScript, onde declarar o tipo da variável não é obrigatório.
+
+No Java utilizamos identificadores que representam uma referência (ponteiro) a um valor em memória, e esta referência pode ser redirecionada a outro valor, sendo portanto esta a causa do nome "variável", pois o valor é mutavel.
+
+Já as **Constantes** são valores armazenados em memória que não podem ser modificados depois de declarados. Em Java, esses valores são representados epla palavra reservada``` final ```, seguida de tipo.
+
+Por convenção, **Constantes** são sempre escritas em CAIXA ALTA.
+
+Abaixo temos um exemplo explicativo sobre uso de variáveis e constantes.
+
+```java
+public class ExemploVariavel {
+    public static void main (String[] args){
+        int numero = 5;
+        numero = 10;
+        System.out.print(numero);
+    }
+}
+```
+A saída no console será ```10```
+
+```java
+public class ExemploVariavel {
+    public static void main (String[] args) {
+        final double VALOR_DE_PI = 3.14;
+    }
+}
+```
+Nesse caso a variavel ```VALOR_DE_PI``` terá permanentemente o valor de 3.14 armazenado.
