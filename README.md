@@ -82,3 +82,76 @@ public class ExemploVariavel {
 }
 ```
 Nesse caso a variavel ```VALOR_DE_PI``` terá permanentemente o valor de 3.14 armazenado.
+
+---
+
+## Operadores
+
+- Operadores aritméticos
+- Operadores unários
+- Operadores relacionais
+- Operadores lógicos
+- Operador ternário
+
+Simbolos especiais que tem um significado próprio para a linguagem e estão associados a determinados operadores.
+
+| Operador | Comparação |
+| -------- | ---------- | 
+| ==       | Igual      |
+| !=       | Diferente  |
+| <        | Menor      |
+| >        | Maior      |
+| <=       | Menor igual|
+| >=       | Maior igual|
+
+---
+
+### Atribuição 
+
+Representado pelo Símbolo de ```=```.
+
+O operador de atribução é utilizado para definir o valor inicial ou sovrescrever o valor de uma variável. Em Java definimos um tipo, nome e opcionalmente atribuímos um valor à vriável através do operador de atribuição. Exemplo:
+
+```java
+String nome = "Antonio";
+int idade = 27;
+double peso = 68.5;
+char sexo = 'M';
+boolean doadorOrgao = true;
+date dataNascimento = new date();
+```
+
+### Aritméticos
+
+O operador aritmético é utilizado para realizar operações matemáticas entre valores numéricos, podendo se tornar ou não uma expressão mais complexa.
+
+Os operadores aritméticos são: ```+```(adição), ```-``(subtração), ```*```(multiplicação) e ```/```(divisão).
+
+```java
+//classe Operadores.java
+double soma = 10.5 + 15.7;
+int subtracao = 100 - 50;
+int multiplicacao = 2 * 10;
+int divisao = 9 / 3;
+int modulo = 18 % 3;
+double resultado = (10 * 7) + (20 / 4 - 2);
+```
+
+**Atenção!** O operador de adição (+), quando utilizado em variáveis do tipo texto, realizará a "concatenação de textos".
+
+```java
+String nomeCompleto = "LINGUAGEM" + "JAVA";
+
+String A = "Antonio";
+String B = "Freitas";
+
+String concatenacao = "?";
+
+concatenacao = 1 + 1 + 1 + "1";
+concatenacao = 1 + "1" + 1 + 1;
+concatenacao = 1 + "1" + 1 + "1";
+concatenacao = "1" + 1 + 1 + 1;
+concatenacao = "1" + (1+1+1);
+```
+
+
