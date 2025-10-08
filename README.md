@@ -154,4 +154,19 @@ concatenacao = "1" + 1 + 1 + 1;
 concatenacao = "1" + (1+1+1);
 ```
 
+### Unários
 
+Esses operadores são aplicados juntamente com um outro operador aritmético. ELes realizam alguns trabalhos básicos como incrementar, decrementar, inverter valores numéricos e booleanos.
+
+- (+) Operador unário de valor positivo - números são positivos sem esse operador expicitamente;
+- (-) Operador unário de valor negativo - nega um número ou expressão aritmética;
+- (++) Operador unário de incremento de valor - incrementa o valor em 1 unidade;
+- (--) OPerador unário de decremento de valor - decrementa o valor em 1 unidade;
+- (!) Operador unário lógico de negação - nega o valor de uma expressão booleana;
+
+Exemplo:
+
+```java
+//classe Operadores.java
+
+```
