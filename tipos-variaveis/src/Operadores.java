@@ -1,25 +1,11 @@
 public class Operadores {
     public static void main (String[] args) {
-        String concatenacao = "?";
+        boolean iLoveYou = true;
 
-        concatenacao = 1 + 1 + 1 + "1";
-    
-        System.out.println(concatenacao);
+        System.out.println(!iLoveYou);
 
-        concatenacao = 1 + "1" + 1 + 1;
-    
-        System.out.println(concatenacao);
+        iLoveYou = !iLoveYou;
 
-        concatenacao = 1 + "1" + 1 + "1";
-    
-        System.out.println(concatenacao);
-
-        concatenacao = "1" + 1 + 1 + 1;
-    
-        System.out.println(concatenacao); 
-
-        concatenacao = "1" + (1+1+1);
-
-        System.out.println(concatenacao);
+        System.out.println(iLoveYou);
     }
 }
