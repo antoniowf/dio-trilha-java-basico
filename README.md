@@ -19,7 +19,7 @@ Os outo tipos primitivos em Java são:
 Esses tipos não são considerados objetos, e portanto representam os valores brutos. Eles são armazenados diretamente na pilha de memória (Memory Stack).
 
 O ponto mais relevante em copreender a definição dos tipos de dados é o momento da definição do tipo para uma variável. **Qual tipo de dado eu utilizaria para determinar a idade de uma pessou ou o salário de um funcionário?**
-
+---
 ## Declaração de variáveis
 
 Variável é uma identificação de um espaço em memoria utilizado pelo nosso programa Seguindo as conveções em lignuagem de programação, toda variável é composta por:
@@ -50,7 +50,7 @@ short numeroCurto = 1;
 int numeroNormal = numeroCurto;
 short numeroCurto2 = numeroNormal;
 ```
-
+---
 ## Variaveis e Constantes
 
 Uma **variável** pe uma área de memória, associada a um nome, que pode armazenar valores de um determinado tipo. Um tipo de dado define um conjunto de valores e um conjunto de operações. **Java** é uma linguagem com rigidez de tipos, diferente de linguagens como JavaScript, onde declarar o tipo da variável não é obrigatório.
@@ -82,9 +82,7 @@ public class ExemploVariavel {
 }
 ```
 Nesse caso a variavel ```VALOR_DE_PI``` terá permanentemente o valor de 3.14 armazenado.
-
 ---
-
 ## Operadores
 
 - Operadores aritméticos
@@ -105,7 +103,6 @@ Simbolos especiais que tem um significado próprio para a linguagem e estão ass
 | >=       | Maior igual|
 
 ---
-
 ### Atribuição 
 
 Representado pelo Símbolo de ```=```.
@@ -120,7 +117,7 @@ char sexo = 'M';
 boolean doadorOrgao = true;
 date dataNascimento = new date();
 ```
-
+---
 ### Aritméticos
 
 O operador aritmético é utilizado para realizar operações matemáticas entre valores numéricos, podendo se tornar ou não uma expressão mais complexa.
@@ -138,7 +135,6 @@ double resultado = (10 * 7) + (20 / 4 - 2);
 ```
 
 **Atenção!** O operador de adição (+), quando utilizado em variáveis do tipo texto, realizará a "concatenação de textos".
-
 ```java
 String nomeCompleto = "LINGUAGEM" + "JAVA";
 
@@ -161,13 +157,53 @@ Esses operadores são aplicados juntamente com um outro operador aritmético. EL
 - (+) Operador unário de valor positivo - números são positivos sem esse operador expicitamente;
 - (-) Operador unário de valor negativo - nega um número ou expressão aritmética;
 - (++) Operador unário de incremento de valor - incrementa o valor em 1 unidade;
-- (--) OPerador unário de decremento de valor - decrementa o valor em 1 unidade;
+- (--) Operador unário de decremento de valor - decrementa o valor em 1 unidade;
 - (!) Operador unário lógico de negação - nega o valor de uma expressão booleana;
 
 Exemplo:
 
 ```java
 //classe Operadores.java
+public class operadores {
+    public static void main(String[] args) {
+        
+        boolean iLoveYou = True;
 
+        System.out.println(!iLoveYou);
+
+    }
+}
 ```
+---
+### Ternário
 
+O operador de condição ternária é uma forma resumida para definir uma condição e escolher por um dentre dois valores. Você deve pensar numa condição ternária como se fosse uma condição ```IF``` normal, porém, de uma forma em que toda a sua estrutura estará escrita numa única linha.
+O operador ternário é representado pelos simbolos ```?:``` utilizados na seguinte estrutura de sintaxe:
+
+```<Expressão condicional> ? <Caso condição seja true> : <Caso condição seja false>```
+
+Exemplos abaixo
+
+```java
+//classe operadores.java
+public class ternario {
+    public static void main(String[] args) {
+        int a, b;
+        
+        a = 5;
+        b = 6;
+
+        /*EXEMPLO COM ESTRUTURA IF/ELSE
+        String resultado = "";
+
+        if(a==b);
+            resultado = "Verdadeiro";
+        else
+            resultado = "Falso";
+        */
+
+        System.out.println(resultado);
+        
+    }
+}
+```
