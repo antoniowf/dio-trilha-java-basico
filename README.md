@@ -427,3 +427,113 @@ Uma parte fundamental na elaboração de algoritmos simples ou complexos é dete
 
     return valorMontante;
 ```
+---
+## Palavras reservadas
+- Tipos primitivos
+- Classificações
+- Escopo de uso
+- Palavras "opostas"
+---
+Palavras reservadas são identificadores de uma linguagem que já possuem uma finalidade específica, portanto não podem ser utilizados para nomear variáveis, classes, métodos ou atributos.
+
+A linguagem Java possui 52 palavras reservadas. Todas essas palavras são classificadas em grupos e escritas com letra minúscula, sendo identificado com uma cor especial pela maioria das IDE's. Abaixo temos a lista de palavras agrupadas por sua finalidade.
+
+### 🔹 Controle de Fluxo
+| Palavra    | Descrição                                                               |
+| ---------- | ----------------------------------------------------------------------- |
+| `if`       | Executa um bloco de código se uma condição for verdadeira.              |
+| `else`     | Executa um bloco de código alternativo se a condição do `if` for falsa. |
+| `switch`   | Seleciona uma das várias opções com base em um valor.                   |
+| `case`     | Define um dos ramos possíveis em um `switch`.                           |
+| `default`  | Define o bloco executado se nenhum `case` corresponder.                 |
+| `for`      | Cria um loop com contador.                                              |
+| `while`    | Cria um loop que executa enquanto uma condição for verdadeira.          |
+| `do`       | Executa um bloco antes de testar a condição (`do-while`).               |
+| `break`    | Interrompe a execução de um loop ou `switch`.                           |
+| `continue` | Interrompe a iteração atual e continua o loop.                          |
+| `return`   | Retorna um valor de um método ou encerra sua execução.                  |
+
+### 🔹 Declaração de Tipos e Modificadores
+| Palavra        | Descrição                                                            |
+| -------------- | -------------------------------------------------------------------- |
+| `class`        | Define uma classe.                                                   |
+| `interface`    | Define uma interface.                                                |
+| `enum`         | Define um conjunto fixo de constantes.                               |
+| `extends`      | Indica herança de uma classe.                                        |
+| `implements`   | Indica que uma classe implementa uma interface.                      |
+| `package`      | Define o pacote ao qual a classe pertence.                           |
+| `import`       | Permite usar classes de outros pacotes.                              |
+| `public`       | Torna o membro acessível a todas as classes.                         |
+| `protected`    | Torna o membro acessível apenas dentro do pacote e subclasses.       |
+| `private`      | Restringe o acesso apenas à própria classe.                          |
+| `abstract`     | Define uma classe ou método abstrato (que não pode ser instanciado). |
+| `final`        | Impede herança, sobrescrita ou modificação de valor.                 |
+| `static`       | Indica que o membro pertence à classe, não à instância.              |
+| `synchronized` | Controla acesso concorrente a métodos ou blocos.                     |
+| `transient`    | Impede que um campo seja serializado.                                |
+| `volatile`     | Indica que uma variável pode ser modificada por múltiplas threads.   |
+| `native`       | Indica que um método é implementado em código nativo (C/C++).        |
+| `strictfp`     | Garante precisão consistente em cálculos de ponto flutuante.         |
+
+### 🔹 Tipos Primitivos
+| Palavra   | Descrição                                      |
+| --------- | ---------------------------------------------- |
+| `byte`    | Tipo numérico inteiro de 8 bits.               |
+| `short`   | Tipo numérico inteiro de 16 bits.              |
+| `int`     | Tipo numérico inteiro de 32 bits.              |
+| `long`    | Tipo numérico inteiro de 64 bits.              |
+| `float`   | Tipo numérico de ponto flutuante de 32 bits.   |
+| `double`  | Tipo numérico de ponto flutuante de 64 bits.   |
+| `char`    | Armazena um único caractere Unicode (16 bits). |
+| `boolean` | Armazena valores lógicos: `true` ou `false`.   |
+| `void`    | Indica que um método não retorna valor.        |
+
+### 🔹 Tratamento de Exceções
+| Palavra   | Descrição                                                   |
+| --------- | ----------------------------------------------------------- |
+| `try`     | Bloco de código que pode lançar exceções.                   |
+| `catch`   | Captura e trata exceções lançadas.                          |
+| `finally` | Executa código após o `try`, independentemente de exceções. |
+| `throw`   | Lança uma exceção explicitamente.                           |
+| `throws`  | Declara que um método pode lançar exceções.                 |
+
+### 🔹 Controle de Objetos e Memória
+| Palavra | Descrição                                         |
+| ------- | ------------------------------------------------- |
+| `new`   | Cria uma nova instância de um objeto.             |
+| `this`  | Referência para o objeto atual.                   |
+| `super` | Referência para a superclasse imediata.           |
+| `null`  | Representa a ausência de valor em uma referência. |
+
+### 🔹 Literais e Valores Especiais
+| Palavra | Descrição                  |
+| ------- | -------------------------- |
+| `true`  | Valor booleano verdadeiro. |
+| `false` | Valor booleano falso.      |
+
+### 🔹 Controle de Threads (Concorrência)
+| Palavra        | Descrição                                                        |
+| -------------- | ---------------------------------------------------------------- |
+| `synchronized` | Controla o acesso simultâneo de threads a métodos/blocos.        |
+| `volatile`     | Garante visibilidade e consistência de variáveis compartilhadas. |
+---
+ ## Java Doc
+
+ ## Documentação
+
+ Uma das maiores características da linguagem Java é que desde suas primeiras versões tínhamos em nossas mãos uma documentação rica e detalhada dos recursos da linguagem.
+
+Conforme site oficial, podemos compreender e explorar todos os recursos organizados por pacotes e classes bem específicas sem nem mesmo escrever uma linha de código.
+
+Hoje costuma-se afirmar que para se tornar um dev de nivel avançando é um requisito imprescindível adquirir a habilidade de compreender a documentação oficial da linguagem e dos frameworks que são incorporados nos projetos atuais.
+
+## Tags
+
+Mas e quais as informações que obtemos através de classes documentadas na linguagem? Java Doc é composto por tags que representam dados relevantes para a compreensão da proposta de uma classe e os conjunto de seus métodos e atributos conforme tabela abaixo:
+
+| Tag | Descrição |
+|-----| --------- |
+| @autor | Autor / criador |
+| @version | Versão do recurso disponibilizado |
+| @since | Versão / Data de inínio da disponibilização do recurso |
+
