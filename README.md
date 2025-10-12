@@ -536,4 +536,57 @@ Mas e quais as informações que obtemos através de classes documentadas na lin
 | @autor | Autor / criador |
 | @version | Versão do recurso disponibilizado |
 | @since | Versão / Data de inínio da disponibilização do recurso |
+| @param | Descrição dos parâmetros dos métodos criados |
+| @return | Definição do tipo de retorno de um método |
+| @throws | Se o método lança alguma exceção |
 
+Abaixo iremos ilustrar a classe calculadora com um exemplo de documentação destacando as **tags** mais utilizadas.
+
+```java
+/**
+ * <h1>Calculadora</h1>
+ * A calculadora realiza operações matemáticas entre números inteiros
+ * <p>
+ * <b>Note:</b> Leia atentamente a documentação destas classes para desfrutar dos recursos oferecidos pelo autor
+ * 
+ * @author Antonio W. Freitas
+ * @version 1.0
+ * @since 10/10/2025
+ */
+
+public class calculadora {
+    /**
+     * Este método é utilizado para somar dois numeros inteiros
+     * @param numeroUm este é o primeiro parâmetro do método
+     * @param numeroDois este é o segundo parâmentro do método
+     * @return int o resultado deste método é a soma dos dois números
+     */
+    public int somar(int numeroUm, int numeroDois) {
+        return numeroUm + numeroDois;
+    }
+}
+```
+### Tipos de comentários
+- One line
+```java
+//Olá, eu sou um comentário em uma única linha
+```
+- Mult line
+```java
+/*
+* Olá eu sou um comentário
+* em mais de uma linha,
+* me utilize quando precisar
+* de um texto mais robusto.
+*/
+```
+- Documentation
+```java
+/**
+ * Estas duas estrelinhas acima
+ * servem para você identificar 
+ * que pretende elaborar um
+ * comentário a nível de
+ * documentação.
+ */
+```
