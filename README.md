@@ -603,3 +603,28 @@ javadoc -encoding UTF-8 - docencoding ISO-8859-1 - d ../docs src/*.java
 ---
 ## Terminal e argumentos
  
+Nem sempre executamos nosso programa Java pela IDE. Com a JVM devidamente configurada, podemos criar um executável do nosso programa e disponibilizar o instalador para qualquer sistema operacional.
+
+No nosso caso iremos aprender como executar um programa Java via terminal como MS - DOS ou terminal do VsCode.
+
+Vamos criar uma classe chamada MinhaClasse.java com o código abaixo:
+
+```java
+public class MinhaClasse {
+    public stativ void main(String[] args){
+        System.out.println("Oi, fui executado pelo terminal");
+    }
+}
+```
+Observe que nosso projeto Java criado por um IDE, ele terá uma pasta chamada **bin**. É nesta pasta que ficarão os arquivos .class, o nosso `bytecode`.
+
+Mesmo usando uma IDE, nós sempre precisaremos identificar aonde se encontra as classes do nosso projeto: no caso C:\Users\antonio.freitas\Documents\Code\src\dio-trilha-java-basico\Projetos\Terminal e argumentos
+
+### Terminal
+Vamos ilistrar como executar uma classe, depois de compilada, sem precisar usar a IDE.
+
+1. Abra o MS-DOS ou Power Shell
+2. Localize o diretório do seu projeto: C:\Users\antonio.freitas\Documents\Code\src\dio-trilha-java-basico\Projetos\Terminal e argumentos
+3. Acesse a pasta bin através do `cd bin`
+4. execute o comando `java Minhaclasse.java` trocando o `.class` por `.java`
+
