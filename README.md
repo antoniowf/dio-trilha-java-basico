@@ -628,3 +628,31 @@ Vamos ilistrar como executar uma classe, depois de compilada, sem precisar usar 
 3. Acesse a pasta bin através do `cd bin`
 4. execute o comando `java Minhaclasse.java` trocando o `.class` por `.java`
 
+### Argumentos
+
+Quando executamos uma classe que contenha o método main, o mesmo permite que passemos um array `[]` de argumentos do tipo `String`. Logo podemos após a definição da classe a ser executada informar estes parâmetros, exemplo:
+
+```bash
+java MinhaClase argumentoUm argumentoDois 
+```
+Exemplo
+```java
+public class AboutMe {
+    public class static void main(String[] args) {
+        //os argumentos começam com o indice 0
+        String nome = args [0];
+        String sobrenome = args [1];
+        int idade = integer.valueOf(args [2]);
+        double altura = Double.valueOf(args [3]);
+
+        System.out.println("Olá, me chamo " + nome + " " + sobrenome);
+        System.out.println("Tenho " + idade + " anos");
+        System.out.println("Minha altura é de " + altura + "cm");
+    }
+}
+```
+### Scanner
+
+Nos exemplos anteriores percebemos que podemos receber dados digitados pelo usário do nosso sistema, porém tudo precisa estar em uma linha e também é necessário informar os valores nas posições correspondentes. Esta abordagem pode deixar margens de execução com erro do nosso programa. Para isso, com a finalidade de deixar as nossas entradas de dados mais seguras, agora vamos receber estes dados via **Scanner**.
+
+A classe Scanner permite que o usuário tenha uma interação mais assertiva com o nosso programa, veja como vamos mudar o nosso programa `AboutMe` para deixar mais intuitivo ao usuário.
