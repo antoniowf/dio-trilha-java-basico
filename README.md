@@ -657,3 +657,151 @@ Nos exemplos anteriores percebemos que podemos receber dados digitados pelo usá
 
 A classe Scanner permite que o usuário tenha uma interação mais assertiva com o nosso programa, veja como vamos mudar o nosso programa `AboutMe` para deixar mais intuitivo ao usuário.
 ---
+## Estrutura condicional 
+
+### Controle de fluxo
+
+Controle de fluxo é a habilidade de ajustar a maneira como um programa realiza suas tarefas. Por meio de instruções especiais, chamadas de comandos, essas tarefas podem ser executadas seletivamente, repetidamente ou excepcionalmente.
+
+#### Classificação:
+- Estruturas condicionais: if-else, switch-case;
+Utilizadas para tomar decisões com base em condições específicas como:
+    ```java
+    if (condicao) {
+        // código a ser executado se a condição for verdadeira
+    } else {
+        // código a ser executado se a condição for falsa
+    }
+    ```
+    e
+    ```java
+    switch (variavel) {
+        case valor1:
+            // código a ser executado se variavel == valor1
+            break;
+        case valor2:
+            // código a ser executado se variavel == valor2
+            break;
+        default:
+            // código a ser executado se nenhum dos casos anteriores for verdadeiro
+    }
+    ```
+- Estruturas de repetição: for, while, do-while;
+Utilizadas para repetir um bloco de código várias vezes, como:
+    ```java
+    for (int i = 0; i < 10; i++) {
+        // código a ser repetido
+    }
+    ```
+    e
+    ```java
+    while (condicao) {
+        // código a ser repetido enquanto a condição for verdadeira
+    }
+    ```
+    e
+    ```java
+    do {
+        // código a ser repetido
+    } while (condicao);
+    ```
+- Estruturas de exceções: try-catch-finally, throw;
+Utilizadas para tratar erros e exceções que podem ocorrer durante a execução do programa, como:
+    ```java
+    try {
+        // código que pode lançar uma exceção
+    } catch (TipoDeExcecao e) {
+        // código para tratar a exceção
+    } finally {
+        // código que será executado independentemente de uma exceção ter sido lançada ou não
+    }
+    ```
+    e
+    ```java
+    throw new TipoDeExcecao("Mensagem de erro");
+    ```
+A estrutura condicional possibilita a escolha de um grupo de ações e comportamentos a serem executadas quando determinadas condições são ou não satisfeitas. A estrutura condicional pode ser **Simples** ou **Composta**.
+### Condicionais Simples
+Quando ocorre uma validação de execução de fluxo somente quando a condição for positiva, consideramos como uma estrutura **Simples**.
+
+```java
+public class CaixaEletronico
+    public static void main(String[] args) {
+
+        double saldo = 25.00;
+        double valorSolicitado = 17.0;
+
+    }
+```
+
+### Condicionais Compostas
+Algumas vezes o nosso programa deverá seguir mais de uma jornada de execução condicionado a uma regra de negócio, este cenário é denominado **Estrutura Condicional Composta**. Veja o exemplo abaixo:
+
+```java
+public class CaixaEletronico {
+    public static void main(String[] args) {
+
+        double saldo = 25.00;
+        double valorSolicitado = 17.0;
+
+        if (valorSolicitado < saldo) {
+            System.out.println("Retire seu dinheiro na boca do caixa");
+            saldo = saldo - valorSolicitado;
+        } else {
+            System.out.println("Saldo insuficiente para saque");
+        }
+        System.out.println("Seu saldo atual é de " + saldo);
+    }
+}
+```
+### Condicionais encadeadas
+Em um controle de fluxo condicional, nem sempre nos limitamos ao **se** `(if)` e **senão** `(else)`, poderemos ter uma terceira, quarta e ou inúmeras condições. Conforme exemplo abaixo:
+
+```java
+public class CaixaEletronico {
+    public static void main(String[] args) {
+
+        double saldo = 25.00;
+        double valorSolicitado = 17.0;
+
+        if (valorSolicitado < saldo) {
+            System.out.println("Retire seu dinheiro na boca do caixa");
+            saldo = saldo - valorSolicitado;
+        } else if (valorSolicitado == saldo) {
+            System.out.println("Atenção, você está sacando todo o seu saldo");
+            saldo = saldo - valorSolicitado;
+        } else {
+            System.out.println("Saldo insuficiente para saque");
+        }
+        System.out.println("Seu saldo atual é de " + saldo);
+    }
+}
+```
+Não se limitando a somente um `else if`, podemos ter quantos forem necessários para atender a regra de negócio do nosso sistema. Exemplo:
+
+```java 
+public class CaixaEletronico {
+    public class main(String[] args) {
+        double saldo = 25.00;
+        double valorSolicitado = 17.0;
+
+        if (valorSolicitado < saldo) {
+            System.out.println("Retire seu dinheiro na boca do caixa");
+            saldo = saldo - valorSolicitado;
+        } else if (valor solicitado == saldo) {
+            System.out.println("Atenção, você está sacando todo o seu saldo");
+            saldo = saldo - valorSolicitado;
+        } else if (valorSolicitado > 1000) {
+            System.out.println("Para saques acima de R$ 1000,00 dirija-se ao gerente");
+            } else {
+                System.out.println("Saldo Insuficiente para saque");
+            }
+        }
+        }
+        }
+    }
+}
+        System.out.println("Seu saldo atual é de " + saldo);
+    }
+}
+```
