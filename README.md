@@ -805,3 +805,168 @@ public class CaixaEletronico {
     }
 }
 ```
+### Condição Ternária
+Como vimos em operadores, podemos abreviar nosso algorítmo condicional refatorando com o conceito de operador ternário. Vamos refatorar o exemplo para ilustrar o poder deste recurso:
+
+```java
+public class ResultadoEscolar
+    public static void main(String[] args) {
+        int nota = 7;
+        String resultado = nota >7 ? "Aprovado" : "Reprovado";
+        System.out.println(resultado);
+    }
+```
+outra situação:
+
+```java
+public class ResultadoEscolar {
+    public static void main(String[] args) {
+        int nota = 7;
+        String resultado = nota >7 ? "Aprovado" : nota == 7 ? "Recuperação" : "Reprovado";
+        //O primeiro ? é referente ao if e o segundo ? é referente ao else if e o : é referente ao else
+        System.out.println(resultado);
+    }
+}
+```
+Podemos aplicar o operador ternário em qualquer situação que envolva uma decisão binária, ou seja, **se** ou **senão**. Melhorando a legibilidade do código e diminuindo o número de linhas do nosso programa.
+A sua aplicabilidade só deve ser evitada em situações onde o código se torne complexo e de difícil entendimento, por exemplo:
+
+```java
+public class ResultadoEscolar {
+    public static void main(String[] args) {
+        int nota = 7;
+        String resultado = nota >7 ? "Aprovado" : nota == 7 ? "Recuperação" : nota < 5 ? "Reprovado" : "Estude mais";
+        //O primeiro ? é referente ao if e o segundo ? é referente ao else if e o : é referente ao else
+        System.out.println(resultado);
+    }
+}
+```
+ficaria mais facil a leitura se fosse escrito como:
+```java
+    public class ResultadoEscolar {
+        public static void main(String[] args) {
+            int nota = 7;
+            String resultado;
+            if (nota > 7) {
+                resultado = "Aprovado";
+            } else if (nota == 7) {
+                resultado = "Recuperação";
+            } else if (nota < 5) {
+                resultado = "Reprovado";
+            } else {
+                resultado = "Estude mais";
+            }
+            System.out.println(resultado);
+        }
+    }
+```
+Basta uma comparação simples para perceber que o código ficou mais legível e fácil de entender. Destacando os blocos de decisão `if`, `else if` e `else`.
+---
+### Switch case
+
+A estrutura Switch compara o valor de cada caso com o a variável sequencialmente, e sempre que encontra um valor correspondente, executa o código associado ao caso. Para evitar que as comparações continuem a ser executadas após um caso correspondente ter sido encontrado, acrescentamos o comando *break* no final de cada bloco de códigos. O comando *break*, quando executado, encerra a execução da estrutura onde ele se encontra.
+
+Vamos imaginar que precisaremos imprimir uma medida com base em  mapa de valores, exemplo:
+
+| sigla | Tamanho |
+|-------|---------|
+| P     | PEQUENO |
+| M     | MEDIO   |
+| G     | GRANDE  |
+
+```java
+public class SistemaMedida {
+    public static void main(String[] args) {
+        String sigla = "G";
+
+        if(sigla == "P")
+                System.out.println("PEQUENO");
+        else if(sigla == "M")
+                System.out.println("MÉDIO");
+        else if(sigla == "G")
+                System.out.println("GRANDE");
+        else
+        System.out.println("INDEFINIDO");
+    }
+}
+```
+Refatorando com switch case:
+```java
+public class SistemaMedida {
+    public static void main(String[] args) {
+        String sigla = "G";
+
+        switch (sigla) { 
+        // aqui iniciamos o switch case, passando as variaveis que serão comparadas
+            case "P":
+            // case é utilizado para definir cada uma das condições que serão comparadas, neste caso a variável sigla
+                System.out.println("PEQUENO");
+                break;
+                //break é utilizado para sair do switch case, o que significa que se o case for verdadeiro, ele não irá verificar os outros cases
+            case "M":
+                System.out.println("MÉDIO");
+                break; 
+            case "G":
+                System.out.println("GRANDE");
+                break;
+            default: 
+            //default é utilizado quando nenhum dos cases for verdadeiro
+                System.out.println("INDEFINIDO");
+        }
+    }
+}
+´´´
+A nivel de sintaxe, nos pioramos o código. Precisamos avaliar com cuidado quando utilizar o switch case, pois em alguns casos ele pode deixar o código mais complexo e difícil de entender.
+
+Porém um cenário que poderíamos adequar o uso do switch/case para melhorar nosso algorítmo seria conforme ilustração abaixo:
+
+Imagine que fomos requisitados a criar um sistema de plano telefônico onde:
+
+- o sistema terá 03 planos: BASIC, MIDIA e TURBO
+- BASIC: 100 minutos de ligação
+- MIDIA: 100 minutos de ligação + whatsapp e instagram gratis
+- TURBO: 100 minutos de ligação + whatsapp, instagram gratis + 5gb Youtube
+
+```java
+// Modo condicional convencional
+public class PlanoTelefonico {
+    public static void main(String[] args) {
+        String plano = "M";
+
+        if(plano == "B")
+            System.out.println("100 minutos de ligação");
+        else if(plano == "M")
+            System.out.println("100 minutos de ligação + whatsapp e instagram gratis");
+        else if(plano == "T")
+            System.out.println("100 minutos de ligação + whatsapp, instagram gratis + 5gb Youtube");
+        else
+            System.out.println("Plano inválido");
+    }
+}
+```
+```java
+// Modo condicional com switch case
+public class PlanoTelefonico {
+    public static void main(String[] args) {
+        String plano = "a";
+
+        switch (plano) {
+            case "B": {
+                System.out.println("100 minutos de ligação");
+                break;
+            }
+            case "M": {
+                System.out.println("100 minutos de ligação + whatsapp e instagram gratis");
+                break;
+            }
+            case "T": {
+                System.out.println("100 minutos de ligação + whatsapp, instagram gratis + 5gb Youtube");
+                break;
+            }
+            default:
+                System.out.println("Plano inválido");
+        }
+    }
+}
+``` 
+Nessa situação o switch case se mostrou mais adequado, pois o número de condições é maior e o código ficou mais organizado.

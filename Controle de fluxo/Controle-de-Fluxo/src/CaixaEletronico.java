@@ -1,5 +1,5 @@
 public class CaixaEletronico {
-    /* 
+    
     public static void main(String[] args) {
         double saldo = 25.0;
         double valorSolicitado = 17.0;
@@ -12,7 +12,7 @@ public class CaixaEletronico {
 
             System.out.println(saldo);
     }
-    */
+   
     public static void main (String[] args) {
         double saldo = 25.00;
         double valorSolicitado = 30.00;
@@ -26,3 +26,4 @@ public class CaixaEletronico {
         System.out.println("Seu saldo atual é " + saldo);
     }
 }
+    
