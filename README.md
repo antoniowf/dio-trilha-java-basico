@@ -656,6 +656,7 @@ public class AboutMe {
 Nos exemplos anteriores percebemos que podemos receber dados digitados pelo usário do nosso sistema, porém tudo precisa estar em uma linha e também é necessário informar os valores nas posições correspondentes. Esta abordagem pode deixar margens de execução com erro do nosso programa. Para isso, com a finalidade de deixar as nossas entradas de dados mais seguras, agora vamos receber estes dados via **Scanner**.
 
 A classe Scanner permite que o usuário tenha uma interação mais assertiva com o nosso programa, veja como vamos mudar o nosso programa `AboutMe` para deixar mais intuitivo ao usuário.
+
 ---
 ## Estrutura condicional 
 
@@ -861,6 +862,7 @@ ficaria mais facil a leitura se fosse escrito como:
     }
 ```
 Basta uma comparação simples para perceber que o código ficou mais legível e fácil de entender. Destacando os blocos de decisão `if`, `else if` e `else`.
+
 ---
 ### Switch case
 
@@ -970,3 +972,8 @@ public class PlanoTelefonico {
 }
 ``` 
 Nessa situação o switch case se mostrou mais adequado, pois o número de condições é maior e o código ficou mais organizado.
+
+Podemos considerar o uso do switch case em situações onde:
+- O número de condições é maior que 03
+- As condições são baseadas em valores discretos (como inteiros, caracteres ou strings)
+- A legibilidade do código é uma prioridade
