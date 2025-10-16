@@ -977,3 +977,67 @@ Podemos considerar o uso do switch case em situações onde:
 - O número de condições é maior que 03
 - As condições são baseadas em valores discretos (como inteiros, caracteres ou strings)
 - A legibilidade do código é uma prioridade
+
+---
+
+### Estruturas de Repetição
+
+> Laços de repetição, também conhecidos como laços de iteração ou simplesmente loops, são comandos que permitem iteração de código, ou seja, que comandos presentes no bloco sejam repetidos diversas vezes.
+> Através de laços de repetição é possivel criar programas que percorram `arrays`, analisando individualmente cada elemento, e até mesmo criar trechos de códigos que sejam repetido até que certa condição estabelecida seja cumprida.
+
+Laços ou repetições são representados pelas seguintes estruturas:
+
+- For (para)
+- While (enquanto)
+- Do While (faça enquanto)
+
+---
+
+### For
+
+O comando `For` (na tradução literal para língua portuguesa "para") permite que uma variável contadora seja testada e incrementada a cada iteração, sendo essas informações definidas na chamada do comando. O comando `For` recebe como entrada uma variável contadora, a condição e o valor de incremento.
+
+A estrutura de sintaxe do controle de repetição `For` é exibida abaixo.
+
+```java
+// estrutura de controle de fluxo For
+
+public class EstruturaFor {
+    public class static void main (String[] args){
+        for (bloco de inicialização; expressão booleana de validação; bloco de atualização)
+        {
+            // comando que será executada até que a
+            // expressão de validação torne-se falsa
+        }
+    }
+}
+```
+
+Exemplo:
+
+```java
+// ExemploFor.java
+public class ExemploFor {
+    public class stativ void main(String[] args){
+        for(int carneirinhos = 1 ; carneirinhos <=20; carneirinhos++){
+            System.out.println("Contando Carneirinhos" + carneirinhos);
+        }
+    }
+}
+```
+
+### For em Arrays
+
+Também usamos o controle de fluxo `for` para interagir sobre arrays e coleções:
+
+```java
+public class ExemploFor {
+    public static void main(String[] args) {
+        String alunos[] = { "FELIPE", "JONAS", "JULIA", "MARCOS" }
+
+        for (int x=0; x<alunos.length; x++) {
+            System.out.println("O aluno no indice x=" alunos);
+        }
+    }
+}
+```
