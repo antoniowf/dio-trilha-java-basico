@@ -1021,6 +1021,12 @@ public class ExemploFor {
     public class stativ void main(String[] args){
         for(int carneirinhos = 1 ; carneirinhos <=20; carneirinhos++){
             System.out.println("Contando Carneirinhos" + carneirinhos);
+            // tendo como saída:
+            // Contando Carneirinhos 1
+            // Contando Carneirinhos 2
+            // Contando Carneirinhos 3
+            // ...
+            // Contando Carneirinhos 20
         }
     }
 }
@@ -1036,9 +1042,74 @@ public class ExemploFor {
         String alunos[] = { "FELIPE", "JONAS", "JULIA", "MARCOS" }
 
         for (int x=0; x<alunos.length; x++) {
+        // (inicialização; condição boleana; incremento atualização)
+        // x=0 representa o indice inicial do array
+        // x<alunos irá representar a condição de permanência do loop
+        // x++ representa o incremento de 1 em 1 do indice unario 
             System.out.println("O aluno no indice x=" alunos);
+            // a saida será:
+            // O aluno no indice x=0 FELIPE
+            // O aluno no indice x=1 JONAS
+            // O aluno no indice x=2 JULIA
+            // O aluno no indice x=3 MARCOS
         }
     }
 }
 ```
+o que é uma array? 
+Um array é uma estrutura de dados que armazena uma coleção de elementos do mesmo tipo em uma única variável. Cada elemento no array poder ser acessado através de um indice numérico, que começa em 0 para o primeiro elemento. No exemplo acima a array `alunos` armazenou quatro nomes de alunos, e o loop `for` percorreu cada elemento da array, imprimindo o nome do aluno junto com o seu indice correspondente.
+Em Java, arrays são objetos que podem ser criados para armazenar qualquer tipo de dado, incluindo tipos primitivos (como int, char, etc.) e tipos de referência (como String, objetos personalizados, etc.). A sintaxe para declarar e inicializar um array em Java é a seguinte:
 
+```java
+tipo[] nomeDoArray = new tipo[tamanho];
+```
+ou
+```java
+tipo[] nomeDoArray = { elemento1, elemento2, elemento3, ... };
+```
+Onde `tipo` é o tipo de dado dos elementos do array, se int for o tipo, `nomeDoArray` é o nome da variável que representa o array, e `tamanho` é o numero de elementos que o array pode armazenar. Vamos a um exemplo:
+
+```java
+int[] numeros = new int[5]; // criando uma array de numeros inteiros com 5 elementos
+numeros[0] = 5; // atribuindo valor ao primeiro elemento do array
+numeros[1] = 10; // atribuindo valor ao segundo elemento do array
+// e assim por diante...
+```
+Ou seja, a array é uma estrutura de dados muito útil para armazenar e manipular coleções de elementos em Java.
+
+### FOR EACH
+
+O uso do `for / each` está fortemente relacionado com um cenário onde contenha um array ou coleção, e assim, a interação é baseada aos elementos da coleção.
+
+```java
+public class ExemploForEach
+    public static void main (String[] args){
+        String alunos [] = {"FELIPE", "JONAS", "JULIA", "MARCOS"};
+
+        // forma abreviada
+        for(String aluno : alunos){
+            System.out.println("O nome do aluno é: " + alunos)
+        }
+    }
+```
+
+### break e continue
+
+**Break** significa quebrar, parar, frear, interromper. E é isso que se faz quando o Java encontra esse comando pela frente. **Continue**, como o nome diz, ele `continua` o laço. O comando `break` interrompe o laço, ja o `continue` interrompe somente a iteração atual.
+
+```java
+// class ExemploBreakContinue.java
+
+public class ExemploBreakContinue
+    public static void main(String[] args){
+        
+        for(int numero = 1; numero <=5; numero ++){
+            if(numero==3)
+                    break;
+                    
+                    System.out.println(numero);
+
+
+        }
+    }
+```
