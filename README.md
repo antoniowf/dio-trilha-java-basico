@@ -1100,7 +1100,7 @@ public class ExemploForEach
 ```java
 // class ExemploBreakContinue.java
 
-public class ExemploBreakContinue
+public class ExemploBreakContinue {
     public static void main(String[] args){
         
         for(int numero = 1; numero <=5; numero ++){
@@ -1112,4 +1112,69 @@ public class ExemploBreakContinue
 
         }
     }
+}
+```
+
+### While
+
+O laço `while` (na tradução literal para língua portuguesa "enquanto") determina que enquanto uma condição for válida, o bloco de código será executado. O laço `while` testa a condição antes de executar o código, logo, caso a condição seja inválida no primeiro teste o bloco nem será executado.
+
+A estrutura de sintaxe do controle de repetição `while` é exibida abaixo
+
+```java
+public class ExemploWhile {
+    // estrutura do controle de fluxo while
+    public static void main(String[] args){
+        while (expressão booleana de validação)
+        {
+            // Comando que será executado até que a
+            // expressão de validação torne-se falsa
+        }
+    }
+}
+```
+Exemplo:
+
+João recebeu R$50,00 de mesada e foi em uma loja de doces gastar todo o seu dinheiro, logo, enquanto o valor dos doces não igualar a R$50,00 ele foi adicionando itens no carrinho.
+
+```java
+// ExemploWhile.java
+import java.util.concurrent.ThreadLocalRandom;
+public class ExemploWhile {
+public static void main(String[] args) {
+	double mesada = 50.0;
+        while(mesada>0) {
+            Double valorDoce = valorAleatorio();
+            if(valorDoce > mesada)
+                valorDoce = mesada;
+
+            System.out.println("Doce do valor: " + valorDoce + " Adicionado no carrinho");
+            mesada = mesada - valorDoce;
+        }
+        System.out.println("Mesada:" + mesada);
+        System.out.println("Joãozinho gastou toda a sua mesada em doces");
+        
+        /*
+        * Não se preocupe quanto a formatação de valores
+        * Iremos explorar os recursos de formatação em breve !!
+        */
+   }
+   private static double valorAleatorio() {
+	return ThreadLocalRandom.current().nextDouble(2, 8);
+   }
+}
+```
+O laço `do / while` (na tradução literal para a língua portuguesa “faça…enquanto”), assim como o laço while, considera que enquanto uma determinada condição for válida o bloco de código será executado. Entretanto, `do / while` testa a condição após executar o código,sendo assim, mesmo que a condição seja considerada inválida no primeiro teste o bloco será executado pelo menos uma vez.
+
+A estrutura de sintaxe do controle de repetição `do / while` é exibida abaixo:
+
+```java
+//estrutura do controle de fluxo do while
+
+do
+{
+    // comando que será executado até que a 
+     // expressão de validação torne-se falsa 
+}
+while (expressão booleana de validação);
 ```
