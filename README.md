@@ -1178,3 +1178,18 @@ do
 }
 while (expressão booleana de validação);
 ```
+### Do While
+O laço `do /while`(na tradução literal para a língua portuguesa "faça...enquanto"), assim como o laço while, considera que enquanto uma determinada condição for válida o bloco de código será executado. Entretanto, `do / while` testa a condição após executar o código, sendo assim, mesmo que a condição seja considerada inválida no primeiro teste o bloco será executado pelo menos uma vez.
+
+A estrutura de sintaxe do controle de repetição `do / while`é exibida abaixo:
+
+```java
+// Estrutura do controle de fluxo do while
+
+do
+{
+    // comando que será executado até que a
+    // espressão de validação torne-se falsa
+}
+while (expressão booleana de validação);
+```
