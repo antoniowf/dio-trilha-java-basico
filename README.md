@@ -1193,3 +1193,8 @@ do
 }
 while (expressão booleana de validação);
 ```
+## Estruturas excepcionais
+
+### Exceções
+
+Ao executar o código Java, diferentes erros podem acontecer: erros de codificação feitos pelo programador, erros devido a entrada errada ou 
