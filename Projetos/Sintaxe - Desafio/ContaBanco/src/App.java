@@ -36,18 +36,22 @@ public class App {
         if (imc < 18.5) {
             System.out.println("Seu IMC é " + imc + ",você está abaixo do peso.");   
         }
+        
         // Faixa de peso ideal entre 18.5 e 24.9
         else if (imc >= 18.5 && imc < 25) {
             System.out.println("Seu IMC é "+ imc + ", você está dentro do peso ideal.");
         }
+
         // Faixa de sobrepeso entre 25 e 29.9
         else if (imc >= 25.00 && imc < 29.9) {
             System.out.println("Seu IMC é " + imc + ", você está com sobrepeso.");
         }
+
         // Faixa de obesidade entre 30 e 39.9
         else if (imc >= 30 && imc < 39.9) {
             System.out.println("Seu IMC é " + imc + ", você está com obesidade.");
         }
+
         // Faixa de obesidade severa acima de 40
         else if (imc >= 40) {
             System.out.println("Seu IMC é " + imc + ", você está com obesidade severa.");
