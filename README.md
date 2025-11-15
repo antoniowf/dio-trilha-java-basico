@@ -1208,3 +1208,191 @@ Todos estes cenários e os demais não são erros mas sim fluxos não previstos 
 
 Vamos trazer o cenário que estudamos na aula sobre terminal e Argumentos onde via terminal informamos alguns dados pessoais.
 
+```java
+import java.util.locale;
+import java.util.Scanner;
+
+public class AboutMe {
+    public static void main(String[] args) {
+        //Criando objeto scanner
+        Scanner scanner = new scanner(System.in).useLocale(Locale.US);
+        
+        System.out.println("Digite seu Nome);
+        String nome = scanner.next();
+
+        System.out.println("Digite seu sobrenome");
+        String sobrenome = scanner.next();
+
+        System.out.println("Digite sua idade");
+        int idade = scanner.nextint();
+
+        System.out.println("Digite sua altura");
+        double altura = scanner.nextDouble();
+
+        System.out.println("Olá " + nome + " " + sobrenome);
+        System.out.println("Você possui " + idade + " anos");
+        System.out.println("Sua altura é de " + altura + "cm.")
+        scanner.close();
+
+    }
+}
+```
+Exceções que podem acontecer no código acima:
+
+- Usuário não informar o nome ou sobrenome;
+- Usuário informar a idade em caractere não numérico;
+- O valor da alura ter uma vírgula ao invês de ser um ponto(conforme padrão americano).
+
+Execuntando o nosso programa com os valores abaixo, vamos entenr como a exceção acontecerá:
+
+| Entrada | Valor | Exceção | Causa |
+| ------- | ----- | ------- | ----- |
+| Digite seu nome | Marcelo |       |       |
+| Digite seu sobrenome | Azevedo |  |       |
+| Digite sua idade | quinze (15) | java.util.inputMissmatchException | O valor inserido não consegue converter uma String "quinze" para int |
+| Digite sua altura | 1,65 | Java.util.inputMissmatchException | o valor está fora do padrão americano |
+
+### Conhecendo algumas exceções já mapeadas
+
+A linguagem Java dispõe de uma vasta lista de classes que representam exceções, abaixo iremos representar as mais comuns:
+
+| Nome | Causa |
+| ---- | ----- |
+| java.lang.NullPointerException | Quando tentamos obter alguma informação de uma variável nula. |
+| java.lang.ArithmeticException | Qunado tentamos dividir um valor por zero. |
+| java.sql.SQLException | Quando existe algum erro relacionado a interação com a base de dados. |
+| java.io.FileNotFoundException | Qunado tentamos ler ou escrever em um arquivo que não existe. |
+
+### Tratamendo de exceções
+
+Equando inevitavelmente ocorrer uma exceção? Como nós desenvolvedores podemos ajustar o nosso alroritmo para amenizar o ocorrido?
+
+A intrução `try` permite que você defina um blco de código para ser testado quanto a erros enquanto está sendo excecutado.
+
+A instrução `catch` permite definir um bloco de código a ser executado, caso ocorra um erro no bloco `try`.
+
+A instrução `finally` permite defirnir um bloco de código a ser executado independente de ocorrer um erro ou não. As palavras-chave `try` e `catch` vêm em pares:
+
+Estrutura de um bloco com `try` e `catch`:
+
+```java
+try {
+    // bloco de código conforme esperado
+}
+
+catch(Exception e){ // Precisamos saber qual exceção 
+    // bloco de código que captura as exceções que podem acontecer  em case de um fluxo não previsto
+}
+```
+Exemplo dos dados tratados.
+
+```java
+import java.util.locale;
+import java.util.Scanner;
+
+public class AboutMe {
+    public static void main(String[] args) {
+        try{
+            //Criando objeto scanner
+            Scanner scanner = new scanner(System.in).useLocale(Locale.US);
+            
+            System.out.println("Digite seu Nome);
+            String nome = scanner.next();
+
+            System.out.println("Digite seu sobrenome");
+            String sobrenome = scanner.next();
+
+            System.out.println("Digite sua idade");
+            int idade = scanner.nextint();
+
+            System.out.println("Digite sua altura");
+            double altura = scanner.nextDouble();
+
+            System.out.println("Olá " + nome + " " + sobrenome);
+            System.out.println("Você possui " + idade + " anos");
+            System.out.println("Sua altura é de " + altura + "cm.")
+            scanner.close();
+        }
+        catch (InputMismatchException e){
+            System.out.println("Os campos idade e altura precisam ser numéricos.");
+        }
+    }
+}
+```
+
+## Hierarquia das exceções
+
+A linguagem Java dispõe de uma variedade de classes que representam exceções, e estas classes são organizadas em uma hierarquia denominadas **Checked and Unchecked Exceptions**.
+
+O que Determina uma exceção ser calssificado como **Checked** ou **Unchecked**?
+É o risco dela ser disparada logo você precisa tratá-la, exemplo:
+
+Vamos imaginar que precisamos realizar de duas maneiras a conversão de uma String para um número, porém o texto contém Alfanuméricos.
+
+```java
+import.java.text.NumberFormat;
+
+public class ExemploExcecao
+    public static void main (String[] args){
+        number valor = Double.valueOf("a1.75");
+
+        valor = NumberFormat.getInstance().parse("a1.75");
+
+        System.out.println(valor);
+    }
+```
+Com o tratamento ficaria da seguinte forma:
+
+```java
+import.java.text.NumberFormat;
+
+public class ExemploExcecao
+    public static void main (String[] args){
+        number valor = Double.valueOf("a1.75");
+
+        valor = NumberFormat.getInstance().parse("a1.75");
+
+        System.out.println(valor);
+    }
+```
+
+Com os dados tratados ficaria da seguinte forma
+
+```java
+import.java.text.NumberFormat;
+
+public class ExemploExcecao
+    public static void main (String[] args){
+        Number valor;
+        try {
+            valor = NumberFormat.getInstance().parse("a1.75");
+            System.out.println(valor);
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+### Exceções customizadas
+
+Nós podemos criar nossas próprias exceções baseadas em regras de negócio e assim melhor direcionar quem form utilizar os recursos desenvolvidos no projeto, exemplo:
+
+- imagina que como regra de negócio , para formatar um CEP necessita sempre de ter 8 dígitos, caso contrário lançará uma exceção que denominamos de `CepInvalidoException`.
+- Primeiro criamos nossa exceção:
+
+```java
+public class CepInvalidoException extends Exception {}
+```
+
+- Em seguida criamos nosso método de formatação do CEP
+
+```java
+static String formatarCep(String cep) throws CepInvalidoException {
+    if(cep.lenght() != 8)
+    throw new CepInvalidoException();
+
+    //simulando um cep formatado
+    return "11.630-076";
+}
+```
