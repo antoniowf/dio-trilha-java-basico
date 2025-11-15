@@ -19,6 +19,7 @@ Os outo tipos primitivos em Java são:
 Esses tipos não são considerados objetos, e portanto representam os valores brutos. Eles são armazenados diretamente na pilha de memória (Memory Stack).
 
 O ponto mais relevante em copreender a definição dos tipos de dados é o momento da definição do tipo para uma variável. **Qual tipo de dado eu utilizaria para determinar a idade de uma pessou ou o salário de um funcionário?**
+
 ---
 ## Declaração de variáveis
 
@@ -81,7 +82,9 @@ public class ExemploVariavel {
     }
 }
 ```
+
 Nesse caso a variavel ```VALOR_DE_PI``` terá permanentemente o valor de 3.14 armazenado.
+
 ---
 ## Operadores
 
@@ -134,7 +137,10 @@ int modulo = 18 % 3;
 double resultado = (10 * 7) + (20 / 4 - 2);
 ```
 ---
-**Atenção!!** O operador de adição (+), quando utilizado em variáveis do tipo texto, realizará a "concatenação de textos".
+ Atenção!!
+ 
+O operador de adição (+), quando utilizado em variáveis do tipo texto, realizará a "concatenação de textos".
+
 ---
 ```java
 String nomeCompleto = "LINGUAGEM" + "JAVA";
@@ -268,7 +274,9 @@ public class Operadores {
 ```
 ---
 ## Métodos
+
 Todas as ações das aplicações são consideradas métodos.
+
 ---
 
 Uma classe é definida por atributos e métodos. Jávimos que atributos são, em sua grande maioria, variáveis de diferentes tipos e valores. Os métodos por sua vez, correspondem a **funções** ou **sub-rotinas** disponíveis dentro de nossas classes.
@@ -301,7 +309,8 @@ public class metodos {
 }
 ```
 ---
-**ATENÇÃO!!** Não existe em **Java** o conceito de **métodos** globais. Todos os **métodos** devem SEMPRE ser definidos dentro de uma classe.
+ATENÇÃO!!
+Não existe em **Java** o conceito de **métodos** globais. Todos os **métodos** devem SEMPRE ser definidos dentro de uma classe.
 ---
 
 ### Critério de defiinlção de métodos
@@ -313,7 +322,9 @@ Mas, como sabemos a melhor forma de definir os meptodos das nossas classes? Para
 2. **Qual o tipo de retorno esperado após executar o método?**
     - Você deve analisar se o método será responsável por retornar algum valor ou não.
 ---
+
 Caso o método não retorne nenhum valor, ele será representado pela palavra-chave void.
+
 ---
 3. **Quais os parâmetros serão necessários para execução do método?**
     - Os métodos as vezes precisam de argumentos como critérios para a execução.
